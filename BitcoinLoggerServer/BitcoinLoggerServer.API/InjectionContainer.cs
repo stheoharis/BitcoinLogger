@@ -5,6 +5,7 @@ using BitcoinLoggerServer.Repositories;
 using BitcoinLoggerServer.Repositories.DBContext;
 using BitcoinLoggerServer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -30,22 +31,33 @@ namespace BitcoinLoggerServer.API
             //services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
                         
             string connString = configuration.GetConnectionString("dbConnection");
-            BitcoinLoggerContext dbContext = new BitcoinLoggerContext(connString);
+            //BitcoinLoggerContext dbContext = new BitcoinLoggerContext(connString);
+            services.AddScoped<DbContext, DbContext>(context => new BitcoinLoggerContext(connString));
 
-            services.AddScoped<UserRepository, UserRepository>(repo => new UserRepository(dbContext));
+
+            //services.AddScoped<UserRepository, UserRepository>(repo => new UserRepository(dbContext));
+            services.AddScoped<UserRepository, UserRepository>();
             services.AddScoped<UserService, UserService>();
             services.AddScoped<User, User>();
 
-            services.AddScoped<UserSessionRepository, UserSessionRepository>(repo => new UserSessionRepository(dbContext));
+            //services.AddScoped<UserSessionRepository, UserSessionRepository>(repo => new UserSessionRepository(dbContext));
+            services.AddScoped<UserSessionRepository, UserSessionRepository>();
             services.AddScoped<UserSessionService, UserSessionService>();
             services.AddScoped<UserSession, UserSession>();
 
-            services.AddScoped<AuthenticationService, AuthenticationService>();
+            //services.AddScoped<SourceRepository, SourceRepository>(repo => new SourceRepository(dbContext));
+            services.AddScoped<SourceRepository, SourceRepository>();
+            services.AddScoped<SourceService, SourceService>();
+            services.AddScoped<Source, Source>();
 
-            HttpClient httpClient = new HttpClient();
-            IConfigurationSection appSettingsSection = configuration.GetSection("Endpoints");
-            List<string> endpoints = appSettingsSection.Get<List<string>>();
-            services.AddScoped<CurrencyPairService, CurrencyPairService>(repo => new CurrencyPairService(httpClient, endpoints));
+            services.AddScoped<AuthenticationService, AuthenticationService>();
+                        
+            //IConfigurationSection appSettingsSection = configuration.GetSection("Endpoints");
+            //List<string> endpoints = appSettingsSection.Get<List<string>>();
+
+            services.AddScoped<HttpClient, HttpClient>();
+            services.AddScoped<CurrencyPairService, CurrencyPairService>();
+            
 
         }
 

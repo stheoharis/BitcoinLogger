@@ -56,6 +56,9 @@ namespace BitcoinLoggerServer.API
 
             app.UseRouting();
 
+            //JWT REQUIRED
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             //CUSTOM EXCEPTION HANDLING

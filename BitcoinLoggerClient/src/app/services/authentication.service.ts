@@ -11,11 +11,19 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
 
 	private controllerName = "Authentication";
+	private thisSession: UserSession;
 
 	constructor(private httpClient: HttpClient) { }
 
 	public Login(user: User): Observable<UserSession> {
 		return this.httpClient.post<UserSession>(environment.apiUrl + this.controllerName + "/login", user);
+	}
+
+	get session() {
+		return this.thisSession;
+	}
+	set session(userSession: UserSession) {
+		this.thisSession = userSession;
 	}
 
 }

@@ -28,5 +28,12 @@ namespace BitcoinLoggerServer.API.Controllers
         {
             return _CurrencyPairService.Get();
         }
+
+        [HttpPost]
+        [Route("[action]")]
+        public IEnumerable<CurrencyPair> GetBySources([FromBody] List<Source> sources)
+        {
+            return _CurrencyPairService.GetBySources(sources);
+        }
     }
 }

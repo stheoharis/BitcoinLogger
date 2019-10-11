@@ -20,6 +20,7 @@ namespace BitcoinLoggerServer.Repositories.DBContext
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Source> Sources { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -58,6 +59,22 @@ namespace BitcoinLoggerServer.Repositories.DBContext
                     .IsUnicode(false);
 
                 entity.Property(e => e.Phone).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Source>(entity =>
+            {
+                
+                entity.Property(e => e.DateCreated).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.DateModified).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.Endpoint)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .IsUnicode(false);                               
             });
 
             OnModelCreatingPartial(modelBuilder);

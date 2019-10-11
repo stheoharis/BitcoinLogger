@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,38 +14,43 @@ namespace BitcoinLoggerServer.Services
     public class CurrencyPairService
     {
         private HttpClient _HttpClient { get; set; }
-        private List<string> _Endpoints;
 
-        public CurrencyPairService(HttpClient httpClient, List<string> endpoints)
+        private readonly SourceService _SourceService;
+        
+        public CurrencyPairService(HttpClient httpClient, SourceService sourceService)
         {
             _HttpClient = httpClient;
-            _Endpoints = endpoints;
+            _SourceService = sourceService;            
         }
 
         public List<CurrencyPair> Get()
         {
-            return GetCurrencyPairsAsync(_Endpoints);
+            return GetCurrencyPairsAsync(_SourceService.Get().ToList());            
         }
 
-        private List<CurrencyPair> GetCurrencyPairsAsync(List<string> endpoints)
+        public List<CurrencyPair> GetBySources(List<Source> sources)
         {
-            if (endpoints == null || endpoints.Count == 0) throw new Exception("No endpoints were specified.");
+            return GetCurrencyPairsAsync(sources);
+        }
+
+        private List<CurrencyPair> GetCurrencyPairsAsync(List<Source> sources)
+        {
+            if (sources == null || sources.Count == 0) throw new Exception("No endpoints were specified.");
 
             List<CurrencyPair> currencyPairs = new List<CurrencyPair>();
 
-            Dictionary<string, HttpResponseMessage> sourceResponsesKeyValues = new Dictionary<string, HttpResponseMessage>();
+            Dictionary<Source, HttpResponseMessage> sourceResponsesKeyValues = new Dictionary<Source, HttpResponseMessage>();
 
             ConcurrentQueue<Exception> exceptions = new ConcurrentQueue<Exception>();
 
             _HttpClient.DefaultRequestHeaders.Add("User-Agent", "C# App");
 
-            Parallel.ForEach(endpoints, endpoint =>
+            //THERES A BETTER METHOD!!
+            Parallel.ForEach(sources, source =>
             {
                 try
-                {
-                    //if (endpoint == "https://www.bitstamp.net/api/ticker/")
-                    //    System.Threading.Thread.Sleep(1000);
-                    sourceResponsesKeyValues.Add(endpoint, _HttpClient.GetAsync(endpoint).Result);
+                {                   
+                    sourceResponsesKeyValues.Add(source, _HttpClient.GetAsync(source.Endpoint).Result);
                 }
                 catch (Exception ex)
                 {

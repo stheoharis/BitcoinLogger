@@ -10,14 +10,14 @@ using Microsoft.Extensions.Logging;
 
 namespace BitcoinLoggerServer.API.Controllers
 {
-    [ApiController]    
-      
-    public class UserController : BaseController<User>
+    [ApiController]
+    //[Authorize]
+    [Route("[controller]")]
+    public class SourceController : BaseController<Source>
     {
-      
-        public UserController(UserService userService) : base(userService)
-        {            
+
+        public SourceController(SourceService sourceService) : base(sourceService)
+        {
         }
-        
     }
 }

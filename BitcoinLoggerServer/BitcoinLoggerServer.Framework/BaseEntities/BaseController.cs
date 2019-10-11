@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BitcoinLoggerServer.Framework.BaseEntities
 {
-    [Authorize]
+    //[Authorize]
+    [Route("[controller]")]
     public abstract class BaseController<T> : ControllerBase, IBaseController<T> where T : BaseEntity, new()
     {
         public IBaseService<T> BaseService { get; set; }
@@ -17,7 +18,7 @@ namespace BitcoinLoggerServer.Framework.BaseEntities
         {
             BaseService = baseService;
         }
-        
+
         [HttpGet]
         public ActionResult<IEnumerable<T>> Get()
         {

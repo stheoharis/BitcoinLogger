@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
 		this.authenticationService.Login(user).subscribe(response => {
 			this.userSession = response;
 			this.router.navigate(["/bitcoinloggermain"]);
-			//routerLink="/bitcoinloggermain"
-
+			this.authenticationService.session = response;
 		}, error => {
 			console.log(error);
 			if (error.error) {

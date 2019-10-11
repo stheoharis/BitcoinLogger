@@ -8,13 +8,14 @@ namespace BitcoinLoggerServer.Services
 {
     internal static class Mapper
     {
-        internal static CurrencyPair ConvertJSONToCurrecyPair(string json, string sourceApi)
+        internal static CurrencyPair ConvertJSONToCurrecyPair(string json, Source source)
         {
 
-            if (sourceApi == "https://www.bitstamp.net/api/ticker/")
+            if (source.Endpoint == "https://www.bitstamp.net/api/ticker/")
             {
                 CurrencyPair result = new CurrencyPair();
-                result.Source = sourceApi;
+
+                result.Source = source;
 
                 dynamic tempCurrencyPair = JsonConvert.DeserializeObject(json);
                 
@@ -31,10 +32,10 @@ namespace BitcoinLoggerServer.Services
                 return result;
             }
             else
-            if (sourceApi == "https://api.gdax.com/products/BTC-USD/ticker")
+            if (source.Endpoint == "https://api.gdax.com/products/BTC-USD/ticker")
             {
                 CurrencyPair result = new CurrencyPair();
-                result.Source = sourceApi;
+                result.Source = source;
 
                 dynamic tempCurrencyPair = JsonConvert.DeserializeObject(json);
 
