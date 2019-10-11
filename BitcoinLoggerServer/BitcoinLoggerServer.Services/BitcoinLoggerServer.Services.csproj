@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BitcoinLoggerServer.Contracts\BitcoinLoggerServer.Contracts.csproj" />
+    <ProjectReference Include="..\BitcoinLoggerServer.Framework\BitcoinLoggerServer.Framework.csproj" />
+    <ProjectReference Include="..\BitcoinLoggerServer.Repositories\BitcoinLoggerServer.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

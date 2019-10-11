@@ -1,0 +1,15 @@
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.deps.json
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.dll
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.pdb
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Contracts.dll
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Repositories.dll
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Security.dll
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Contracts.pdb
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Repositories.pdb
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\bin\Debug\netcoreapp3.0\BitcoinLoggerServer.Security.pdb
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.csprojAssemblyReference.cache
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.AssemblyInfoInputs.cache
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.AssemblyInfo.cs
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.csproj.CopyComplete
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.dll
+C:\Users\stheo\Documents\Visual Studio 2017\Projects\BitcoinLoggerServer\BitcoinLoggerServer.Services\obj\Debug\netcoreapp3.0\BitcoinLoggerServer.Services.pdb

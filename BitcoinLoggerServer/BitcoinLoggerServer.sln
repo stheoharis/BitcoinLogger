@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinLoggerServer.Repositories", "BitcoinLoggerServer.Repositories\BitcoinLoggerServer.Repositories.csproj", "{47A36AE8-678B-43DD-9B8E-0A259A373148}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinLoggerServer.Contracts", "BitcoinLoggerServer.Contracts\BitcoinLoggerServer.Contracts.csproj", "{45BC143A-468B-4BF2-AAB1-9A52DAE450CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinLoggerServer.Services", "BitcoinLoggerServer.Services\BitcoinLoggerServer.Services.csproj", "{E12CDBB5-561F-4C5C-962C-F3BCE532F762}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinLoggerServer.API", "BitcoinLoggerServer.API\BitcoinLoggerServer.API.csproj", "{60741DBD-B238-475F-98F4-6ACAC0B19D2A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45BC143A-468B-4BF2-AAB1-9A52DAE450CA} = {45BC143A-468B-4BF2-AAB1-9A52DAE450CA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLoggerServer.Framework", "BitcoinLoggerServer.Framework\BitcoinLoggerServer.Framework.csproj", "{F521D074-6E1A-4251-8D6E-89E01EF82AC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47A36AE8-678B-43DD-9B8E-0A259A373148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A36AE8-678B-43DD-9B8E-0A259A373148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A36AE8-678B-43DD-9B8E-0A259A373148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A36AE8-678B-43DD-9B8E-0A259A373148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45BC143A-468B-4BF2-AAB1-9A52DAE450CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BC143A-468B-4BF2-AAB1-9A52DAE450CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BC143A-468B-4BF2-AAB1-9A52DAE450CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BC143A-468B-4BF2-AAB1-9A52DAE450CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E12CDBB5-561F-4C5C-962C-F3BCE532F762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E12CDBB5-561F-4C5C-962C-F3BCE532F762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E12CDBB5-561F-4C5C-962C-F3BCE532F762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E12CDBB5-561F-4C5C-962C-F3BCE532F762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60741DBD-B238-475F-98F4-6ACAC0B19D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60741DBD-B238-475F-98F4-6ACAC0B19D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60741DBD-B238-475F-98F4-6ACAC0B19D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60741DBD-B238-475F-98F4-6ACAC0B19D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F521D074-6E1A-4251-8D6E-89E01EF82AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F521D074-6E1A-4251-8D6E-89E01EF82AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F521D074-6E1A-4251-8D6E-89E01EF82AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F521D074-6E1A-4251-8D6E-89E01EF82AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F14D6275-0CA3-4339-A979-9C911ACF2C90}
+	EndGlobalSection
+EndGlobal
