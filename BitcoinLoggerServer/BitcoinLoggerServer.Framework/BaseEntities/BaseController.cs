@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BitcoinLoggerServer.Framework.BaseEntities
 {
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
     public abstract class BaseController<T> : ControllerBase, IBaseController<T> where T : BaseEntity, new()
     {
